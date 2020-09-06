@@ -1,10 +1,4 @@
----
-title: 如何使用Nodejs实现一个OAuth2应用
----
-
 本文是一篇新手教程，目的是提供一个有效的指引，让初次接触OAuth2的同学快速掌握关键信息，快速实现功能，本文不会涉及原理、源码
-
-<!--more-->
 
 ---
 
@@ -67,7 +61,7 @@ yarn add koa koa-router koa-bodyparser oauth2-server jsonwebtoken
 
 编辑package.json，加上入口scripts
 
-```json
+```
 // ...
 "scripts": {
   "auth": "node ./auth",
@@ -246,7 +240,7 @@ router.get('/callback', async(ctx) => {
 
 运行app`yarn run app`，打开浏览器，输入`http://localhost:3001/login`，点击`授权`链接，观察页面。不出意外将会看到这样的结果：
 
-```json
+```
 {
     error: "invalid_argument",
     error_description: "Invalid argument: model does not implement `getClient()`"
@@ -276,7 +270,7 @@ module.exports = {
 
 重新运行auth服务`yarn run auth`，再操作一次点击`授权`，观察页面。不出意外会看到这样的结果：
 
-```json
+```
 {
     error: "invalid_argument",
     error_description: "Invalid argument: model does not implement `saveAuthorizationCode()`"
@@ -483,7 +477,7 @@ async saveToken(token, client, user) {
 
 重新运行`yarn run auth`，不出意外会看到200 ok，观察终端，会发现授权服务器返回了token给我们：
 
-```json
+```
 {
     access_token: "e1062fc1a93d9b86231090a7ca2b221dd0eb7d8a",
     token_type: "Bearer",
@@ -578,7 +572,7 @@ router.get('/callback', async(ctx) => {
 
 重启app和api服务器，`yarn run app` & `yarn run api`，重复第一步的授权，不出意外我们将会看到如下json:
 
-```json
+```
 {
     user: {
         id: 1
