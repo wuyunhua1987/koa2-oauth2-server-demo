@@ -1,0 +1,21 @@
+{
+    "name": "koa2-oauth2-server",
+    "version": "1.0.0",
+    "description": "koa2 oauth2 server demo",
+    "main": "index.js",
+    "author": "wuyunhua",
+    "license": "MIT",
+    "dependencies": {
+        "axios": "^0.20.0",
+        "jsonwebtoken": "^8.5.1",
+        "koa": "^2.13.0",
+        "koa-bodyparser": "^4.3.0",
+        "koa-router": "^9.4.0",
+        "oauth2-server": "^3.1.1"
+    },
+    "scripts": {
+        "auth": "node ./auth",
+        "app": "node ./app",
+        "api": "node ./api"
+    }
+}
